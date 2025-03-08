@@ -5,8 +5,6 @@ const pool = require("./db");
 const path = require('path');
 app.use(cors());
 app.use(express.json());
-
-
   
   
 
