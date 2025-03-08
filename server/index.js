@@ -5,7 +5,7 @@ const pool = require("./db");
 const path = require('path');
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'dist')));  
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
   
   
@@ -212,7 +212,7 @@ app.get("/players/search/:query", async (req, res) => {
 });
 app.get('*', (req, res) => {
     console.log(`Serving index.html for ${req.originalUrl}`);
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 });
 
 // Start Server
