@@ -1,0 +1,121 @@
+.search-cont{
+    margin: 1rem;
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    flex-wrap: nowrap;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.topsearch-bar{
+    height: fit-content;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar{
+    background-color: #393E46;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.textbox{
+    width: 100%;
+    padding: 5px;
+    font-weight: 600;
+    color: #fff;
+    /* background-color: aqua; */
+}
+
+.textbox:focus, input:focus{
+    outline-style: none;
+}
+
+.search-icon{
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    color: #fff;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    /* background-color: aliceblue; */
+}
+
+.search-icon:hover{
+    transition: 300ms;
+    color: #31a1bd;
+}
+
+.sort{
+    display: flex;
+    gap: 5px;
+}
+
+.sort-icon{
+    color: #fff;
+    height: 50px;
+    background-color: #393E46;
+    border-radius: 50%;
+    /* background-color: aquamarine; */
+
+}
+.sort-icon:hover{
+    transition: 300ms ease-in-out;
+    background-color: #00ADB5;
+}
+
+.player-list-card{
+    margin-top: 1.5rem;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+    margin-left: 1rem;
+    border-radius: 15px;
+    width: 12px;
+    background-color: #393E46;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #3f3c3c; 
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ADB5; 
+    border-radius: 10px;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00ADB5; 
+    border-radius: 15px;
+}
+
+.player-card{
+    padding: 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #393E46;
+    border-radius: 5px;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    
+}

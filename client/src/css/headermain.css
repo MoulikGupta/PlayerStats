@@ -1,0 +1,229 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0px 10px;
+  background-color: rgb(75, 75, 121);
+  height: fit-content;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: 100%;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  animation: scanline 4s linear infinite;
+}
+
+@keyframes scanline {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.head-cont{
+width: 80%;
+align-self: center;
+z-index: 2;
+}
+
+.header-inner{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+width: 80%;
+z-index: 2;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.header-pfp{
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.profile-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(100, 217, 255, 0.3), transparent);
+  animation: rotate 3s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+img{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.user-name {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.user-name:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* .user-name::after {
+  content: '|';
+  opacity: 1;
+  animation: blink 1s infinite;
+} */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.tech-logout-btn {
+  background: linear-gradient(145deg, #1a202c, #2d3748);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(74, 85, 104, 0.2);
+  box-shadow: 0 0 15px rgba(26, 32, 44, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.tech-logout-btn span {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-logout-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(66, 153, 225, 0.5), transparent);
+  transition: left 0.5s ease;
+}
+
+.tech-logout-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #1a202c, #2d3748);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(26, 32, 44, 0.6);
+}
+
+.tech-logout-btn:hover::before {
+  left: 100%;
+}
+
+.tech-logout-btn:hover span {
+  transform: scale(1.05);
+}
+
+.tech-logout-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(26, 32, 44, 0.5);
+}
+
+.tech-logout-btn:active::after {
+  opacity: 1;
+}
+
+.About-US{
+  color: aquamarine;
+  font-weight: 600;
+  margin-left: 1rem;
+  transition: 500ms;
+  cursor: pointer;
+}
+.About-US:hover{
+  color: white;
+  
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(66, 153, 225, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(66, 153, 225, 0);
+  }
+}
+
+.tech-logout-btn.pulse {
+  animation: pulse 2s initial;
+}
+
+
+@media screen and (max-width: 850px) {
+  .header-main {
+    width: 100vw;
+    /* background-color: red; */
+  }
+  
+  .header-buttons {
+      gap: 8px;
+  }
+}
