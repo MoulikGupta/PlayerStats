@@ -3,10 +3,12 @@ const cors = require("cors");
 const app = express();
 const pool = require("./db");
 const path = require('path');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 app.use(cors());
 app.use(express.json());
   
-  
+
+
 
 // Create a Player
 app.post("/players", async (req, res) => {
@@ -208,7 +210,13 @@ app.get("/players/search/:query", async (req, res) => {
         res.status(500).json({ error: "Database error" });
     }
 });
-
+app.use('/', createProxyMiddleware({
+    target: 'https://playerstatsviewer-moulik-gupta.onrender.com', // Replace with your client’s URL
+    changeOrigin: true,
+    pathRewrite: {
+        '^/': '', // Remove base path if needed
+    },
+}));
 
 // Start Server
 const PORT = process.env.PORT || 5000;
