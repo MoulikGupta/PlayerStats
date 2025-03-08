@@ -7,7 +7,6 @@ import './App.css'
 import { CategoryContext } from './context/ContextProvider'
 import PlayerProfile from './components/PlayerProfile';
 import AboutUs from './components/AboutUs'
-
 function App() {
   const {isAuthenticated, setIsAuthenticated, data, setData, players, setPlayers, playerStats, sePlayerStats, category} = useContext(CategoryContext)
   const [user, setUser] = useState(null)
@@ -21,7 +20,17 @@ function App() {
       console.error(err.message)
     }
   }
-
+  useEffect(() => {
+    const storedAuth = localStorage.getItem("isAuthenticated");
+    const storedUser = localStorage.getItem("user");
+    if (storedAuth) {
+        setIsAuthenticated(JSON.parse(storedAuth));
+    }
+    if (storedUser) {
+        setData(JSON.parse(storedUser));
+    }
+    getPlayers()
+  }, [])
   useEffect(() => {
     localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated))
   }, [isAuthenticated])
@@ -50,12 +59,12 @@ function App() {
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
-      setIsAuthenticated(true)
-      // console.log("Login Success :)", codeResponse);
+      setIsAuthenticated(true);
       setUser(codeResponse);
     },
-    onError: (error) => console.log('Login Failed :(', error)
+    onError: (error) => console.log('Login Failed :(', error),
   });
+  
   
   const handleLogout = () => {
     setData(null);

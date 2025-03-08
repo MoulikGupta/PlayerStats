@@ -5,6 +5,10 @@ const pool = require("./db");
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'dist')));  
+
+  
+  
 
 // Create a Player
 app.post("/players", async (req, res) => {
@@ -205,6 +209,10 @@ app.get("/players/search/:query", async (req, res) => {
         console.error(err.message);
         res.status(500).json({ error: "Database error" });
     }
+});
+app.get('*', (req, res) => {
+    console.log(`Serving index.html for ${req.originalUrl}`);
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Start Server
