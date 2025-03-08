@@ -14,7 +14,7 @@ function App() {
 
   const getPlayers = async()=>{
     try {
-      const response = await fetch("http://localhost:5000/players")
+      const response = await fetch("https://playerstats.onrender.com//players")
       const jsonData = await response.json()
       setPlayers(jsonData)
     } catch (err) {

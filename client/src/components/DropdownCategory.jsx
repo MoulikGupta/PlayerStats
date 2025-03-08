@@ -9,7 +9,7 @@ function DropdownCategory() {
 
   const gameCategory = async () => {
     try {
-      const response = await fetch("http://localhost:5000/games");
+      const response = await fetch("https://playerstats.onrender.com/games");
       const jsonData = await response.json();
       setFetchedGames(jsonData);
     } catch (err) {

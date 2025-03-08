@@ -11,7 +11,7 @@ function TopGameCard() {
 
   const getPlayersStats = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/player_stats/game/${category.optionId}`);
+      const response = await fetch(`https://playerstats.onrender.com//player_stats/game/${category.optionId}`);
       const jsonData = await response.json();
       setPlayerStats(jsonData);
     } catch (err) {

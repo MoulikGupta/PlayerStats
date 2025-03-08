@@ -40,7 +40,7 @@ function PlayerProfile() {
   useEffect(() => {
     const getPlayerProfile = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/players/${id}/profile`);
+        const response = await fetch(`https://playerstats.onrender.com/players/${id}/profile`);
         const jsonData = await response.json();
         setPlayerProfile(jsonData);
       } catch (err) {
@@ -50,7 +50,7 @@ function PlayerProfile() {
 
     const gamesName = async () => {
       try {
-        const response = await fetch("http://localhost:5000/games")
+        const response = await fetch("https://playerstats.onrender.com//games")
         const jsonData = await response.json();
         setGames(jsonData);
       } catch (err) {
