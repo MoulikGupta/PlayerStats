@@ -50,7 +50,7 @@ function PlayerProfile() {
 
     const gamesName = async () => {
       try {
-        const response = await fetch("https://playerstats.onrender.com//games")
+        const response = await fetch("https://playerstats.onrender.com/games")
         const jsonData = await response.json();
         setGames(jsonData);
       } catch (err) {
