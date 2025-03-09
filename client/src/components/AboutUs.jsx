@@ -2,8 +2,14 @@
 import React from 'react';
 import { Github, Linkedin, Mail, TowerControl as GameController, BarChart2, Users } from 'lucide-react';
 import '../css/aboutus.css';
+import { useNavigate } from "react-router-dom";
 
   const AboutUs = () => {
+    const navigate = useNavigate();
+    const handleGoBack = () => {
+      navigate("/dashboard");
+    }
+
     const founders = [
       {
         id: 1,
@@ -51,6 +57,15 @@ import '../css/aboutus.css';
   
     return (
       <div className="about-us-container">
+        <button 
+          onClick={handleGoBack}
+          className="cursor-pointer mb-5 bg-white w-30 text-blue-700 px-2 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+          Go Back
+        </button>
         <div className="about-us-header">
           <h1>About <span className="highlight">PlayerStatsViewer</span></h1>
           <div className="header-underline"></div>
@@ -90,6 +105,7 @@ import '../css/aboutus.css';
           </section>
   
           <section className="founders-section">
+            
             <h2>Meet Our Founders</h2>
             <div className="founders-cards">
               {founders.map(founder => (

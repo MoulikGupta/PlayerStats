@@ -1,256 +1,268 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-color: #1a1e2e;
-  }
-  
-  .about-us-container {
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #e0e0e0;
-    background-color: #1a1e2e;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #1a1e2e;
+}
 
-  }
-  
-  .about-us-header {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-  }
-  
+.about-us-container {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #e0e0e0;
+  background-color: #1a1e2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.about-us-header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #a855f7;
+  position: relative;
+  z-index: 1;
+}
+
+.header-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+.mission-statement {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #b0b0b0;
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.our-story h2, .founders-section h2, .features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.our-story h2:after, .founders-section h2:after, .features-section h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  border-radius: 2px;
+}
+
+.our-story p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  color: #b0b0b0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, #222639, #1e2130);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  margin-bottom: 20px;
+  color: white;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.feature-card p {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.founders-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.founder-card {
+  background: linear-gradient(145deg, #222639, #1e2130);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.founder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.founder-image {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: grayscale(30%);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(26, 30, 46, 1), rgba(26, 30, 46, 0) 70%);
+}
+
+.founder-card:hover .founder-image img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.founder-info {
+  padding: 30px;
+}
+
+.founder-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.founder-role {
+  color: #a855f7;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.founder-bio {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #b0b0b0;
+}
+
+.founder-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #a855f7;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  color: white;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
   .about-us-header h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
+  }
+  
+  .mission-statement {
+    font-size: 1.1rem;
+  }
+  
+  .founder-card, .feature-card {
+    max-width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.founder-card:hover, .feature-card:hover {
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .about-us-header h1 {
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #ffffff;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 800;
   }
-  
-  .highlight {
-    color: #a855f7;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .header-underline {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #a855f7, #06b6d4);
-    margin: 0 auto 30px;
-    border-radius: 2px;
-  }
-  
-  .mission-statement {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #b0b0b0;
-  }
-  
-  .about-us-content {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-  }
-  
-  .our-story h2, .founders-section h2, .features-section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #ffffff;
-    position: relative;
-    padding-bottom: 15px;
-    letter-spacing: 0.5px;
-  }
-  
-  .our-story h2:after, .founders-section h2:after, .features-section h2:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #a855f7, #06b6d4);
-    border-radius: 2px;
-  }
-  
-  .our-story p {
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-    color: #b0b0b0;
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-  }
-  
-  .feature-card {
-    background: linear-gradient(145deg, #222639, #1e2130);
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-  }
-  
-  .feature-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #a855f7, #06b6d4);
-    margin-bottom: 20px;
-    color: white;
-  }
-  
-  .feature-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: #ffffff;
-  }
-  
-  .feature-card p {
-    color: #b0b0b0;
-    line-height: 1.6;
-  }
-  
-  .founders-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  .founder-card {
-    background: linear-gradient(145deg, #222639, #1e2130);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 500px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .founder-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-  }
-  
-  .founder-image {
-    height: 250px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .founder-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    filter: grayscale(30%);
-  }
-  
-  .image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(26, 30, 46, 1), rgba(26, 30, 46, 0) 70%);
-  }
-  
-  .founder-card:hover .founder-image img {
-    transform: scale(1.05);
-    filter: grayscale(0%);
-  }
-  
-  .founder-info {
-    padding: 30px;
-  }
-  
-  .founder-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: #ffffff;
-  }
-  
-  .founder-role {
-    color: #a855f7;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-  }
-  
-  .founder-bio {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #b0b0b0;
-  }
-  
-  .founder-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #a855f7;
-    transition: all 0.3s ease;
-  }
-  
-  .social-icon:hover {
-    background: linear-gradient(135deg, #a855f7, #06b6d4);
-    color: white;
-    transform: translateY(-3px);
-  }
-  
-  @media (max-width: 768px) {
-    .about-us-header h1 {
-      font-size: 2.2rem;
-    }
-    
-    .mission-statement {
-      font-size: 1.1rem;
-    }
-    
-    .founder-card, .feature-card {
-      max-width: 100%;
-    }
-  
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  .founder-card:hover, .feature-card:hover {
-    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2);
-  }
+}
