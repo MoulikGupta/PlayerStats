@@ -9,7 +9,7 @@ import '../css/aboutus.css';
         id: 1,
         name: "Moulik Gupta",
         role: "Lead Developer & Co-Founder",
-        bio: "Gaming enthusiast with over 8 years of experience in full-stack development. Passionate about creating tools that help gamers track and improve their performance.",
+        bio: "Gaming enthusiast with over 8 years of experience in the field. Passionate about creating tools that help gamers track and improve their performance.",
         image: "https://www.pngarts.com/files/10/Doom-Slayer-Helmet-Download-PNG-Image.png",
         social: {
           github: "https://github.com/MoulikGupta",
