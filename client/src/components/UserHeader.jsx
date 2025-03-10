@@ -6,7 +6,7 @@ import AboutUs from './AboutUs';
 const UserHeader = ({onLogout}) => {
   const { data } = useContext(CategoryContext);
   const navigate = useNavigate();
-  console.log(data)
+  //console.log(data)
   // const { userData } = useContext(CategoryContext);
   // const name = userData?.name  'Guest User';
   // const email = userData?.email  'No email provided';
